@@ -1,0 +1,143 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fecfef);
+  color: #333;
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+p {
+  font-size: 20px;
+  margin: 14px 0;
+}
+
+/* Scrapbook Layout */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-img {
+  width: 320px;
+}
+
+/* Card-like image styling */
+img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #e91e63;
+  margin: 0 auto;
+}
+
+/* Scrapbook Tilt Effect */
+.tilt-left {
+  transform: rotate(-8deg);
+}
+
+.tilt-right {
+  transform: rotate(8deg);
+}
+
+/* Hover effect */
+.side-images img:hover,
+.main-img:hover {
+  transform: scale(1.08) rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* Buttons */
+button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c2185b;
+}
+
+/* Container hidden by default */
+#message {
+  display: none;
+  margin-top: 20px;
+}
+
+/* Paragraphs start invisible */
+#message p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Staggered delays for each paragraph */
+#message.show p:nth-child(1) { animation-delay: 0.2s; }
+#message.show p:nth-child(2) { animation-delay: 0.6s; }
+#message.show p:nth-child(3) { animation-delay: 1s; }
+#message.show p:nth-child(4) { animation-delay: 1.4s; }
+#message.show p:nth-child(5) { animation-delay: 1.8s; }
+#message.show p:nth-child(6) { animation-delay: 2.2s; }
+#message.show p:nth-child(7) { animation-delay: 2.6s; }
+#message.show p:nth-child(8) { animation-delay: 3s; }
+#message.show p:nth-child(9) { animation-delay: 3.4s; }
+#message.show p:nth-child(10) { animation-delay: 3.8s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: style for button */
+#revealBtn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#revealBtn:hover {
+  background-color: #c2185b;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  h1 { font-size: 1em; }
+  p { font-size: 15px; }
+  img { width: 200px; }
+}
